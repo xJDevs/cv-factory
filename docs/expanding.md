@@ -18,7 +18,7 @@ CV Factory is meant to grow with you. The rule is simple: **expand, don't modify
 
 ## Possible, with care (some technical knowledge)
 
-- **New instructions for the agent:** add them at the end of `CLAUDE.md` under a heading such as "My additions". Keep the "Never" list as it is.
+- **New instructions for the agent:** add them at the end of `AGENTS.md` under a heading such as "My additions". Keep the "Never" list as it is.
 - **New sources in the starter catalog** (`setup/finder/sources-catalog.json`): check that the site can be read automatically and that its robots.txt allows it.
 
 ## Not recommended (core files)

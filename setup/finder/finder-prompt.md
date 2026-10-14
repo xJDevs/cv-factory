@@ -4,7 +4,7 @@
 
 The finder is a scheduled AI task that runs in the cloud twice a day, even with the computer off. It reads and writes only in the person's Notion. The rules live in the Notion page **Daily Finder Rules** (from `finder-rules.md`); the task's own prompt (below) only says where things are and the limits.
 
-**Requires Notion.** With the Excel workbook there is no daily finder: the cloud task cannot write to a file on the computer. Excel users ask for vacancies in a conversation ("look for vacancies for me") and the agent follows the local copy of the rules, `my-data/finder-rules.md`, by hand (see `CLAUDE.md`, "Daily finder").
+**Requires Notion.** With the Excel workbook there is no daily finder: the cloud task cannot write to a file on the computer. Excel users ask for vacancies in a conversation ("look for vacancies for me") and the agent follows the local copy of the rules, `my-data/finder-rules.md`, by hand (see `AGENTS.md`, "Daily finder").
 
 ## Schedule
 

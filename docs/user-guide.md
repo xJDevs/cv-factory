@@ -30,7 +30,7 @@ CV Factory brings job hunting down to one thing for you: **review and apply.** T
 
 1. Put the folder on your **Desktop** and name it **`cv-factory`**. On Windows, if OneDrive backs up your Desktop, the Desktop is `C:\Users\<your name>\OneDrive\Desktop`; that works too (the AI finds it), but OneDrive will copy the folder, including your private data, to your OneDrive account. If you prefer it not to, keep the folder outside OneDrive (for example `C:\Users\<your name>\cv-factory`).
 2. **Create a project in your agent** (for example a Project in the Claude app):
-   - Instructions: *"Read CLAUDE.md in the linked folder and follow it."* (other agents: *AGENTS.md*).
+   - Instructions: *"Read AGENTS.md in the linked folder and follow it."* (the same for every agent).
    - Link or attach the `cv-factory` folder.
 3. Open a conversation in that project and say hello. The **onboarding** starts on its own (`setup/onboarding.md`). It asks one question at a time and remembers where it stopped, so you can do it in several sittings.
 

@@ -79,7 +79,7 @@ Each rule traces back to research: how ATS parse and rank, what AI screeners do,
 - **HTML + CSS → Chromium for the PDF, python-docx for the DOCX.** Chosen after experiments with LaTeX (pdfLaTeX, XeLaTeX, LuaLaTeX) and other generators. Ligatures, glyph mapping and reading order failed in ways that broke text extraction ([research doc 05](docs/research/05-generating-pdf-and-docx.md)).
 - **Carlito font** (metric-compatible with Calibri, OFL), embedded. Words with hyphens are never split across lines, because pdfium reads that break as a broken character.
 - **The data model separates facts from wording.** Achievements keep the person's own description, a CV-ready English version, the metric, the context (STAR) and a Verified flag. The CV uses only verified rows.
-- **Agent-agnostic.** `CLAUDE.md` holds the instructions and `AGENTS.md` maps them for Codex, Gemini, Cursor and others. The engine is plain Python and Node, run from the command line.
+- **Agent-agnostic.** `AGENTS.md` is the single source of instructions for every agent (Claude, Codex, Gemini, Cursor…); `CLAUDE.md` only imports it. The engine is plain Python and Node, run from the command line.
 - **Cross-platform.** It works on macOS, Linux and Windows 10/11: one Python setup script, programs found in PATH or in their usual install folders, UTF-8 everywhere, and an integrity check that ignores line endings. Tested on macOS; Windows and Linux are covered by the CI workflow (`.github/workflows/engine.yml`).
 - **Notion is read through database views, not SQL queries.** Notion limits SQL query usage on its plans, and the views give the same rows without that limit.
 - **Integrity check.** `engine/MANIFEST.sha256` fingerprints the core files. Setup warns if someone changed them, because users are encouraged to expand the project but not to modify the engine.
@@ -137,7 +137,7 @@ engine\.venv\Scripts\python.exe engine\scripts\cv.py test engine\example\cv-exam
 ## Project structure
 
 ```
-CLAUDE.md / AGENTS.md   instructions for the AI agent
+AGENTS.md               instructions for the AI agent (CLAUDE.md imports it)
 engine/                 CV engine: template, scripts, 9 tests, fictional example
 setup/                  onboarding, Notion blueprint, Excel spec, finder rules and prompt, LinkedIn guide
 docs/                   user guide, how to expand safely, research

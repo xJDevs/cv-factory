@@ -4,7 +4,7 @@
 
 The onboarding copies everything below the line into the Notion page **Daily Finder Rules**, with every `{{...}}` filled in from `my-data/profile.json`. The finder reads that page on every run, so the person can change the rules there at any time.
 
-**Excel (no scheduled finder):** the onboarding (step 10) copies it instead to `my-data/finder-rules.md`, without the run times, and the agent follows it by hand whenever the person asks for a search: it reads the workbook instead of Notion (section 1), uses the 7-day window (section 2), writes with `workbook.py upsert` with Found by = "Me" and Fit % from 0 to 100 (section 6), and summarizes the run in the chat instead of the Finder Log (sections 7 and 8). See `CLAUDE.md`, "Daily finder".
+**Excel (no scheduled finder):** the onboarding (step 10) copies it instead to `my-data/finder-rules.md`, without the run times, and the agent follows it by hand whenever the person asks for a search: it reads the workbook instead of Notion (section 1), uses the 7-day window (section 2), writes with `workbook.py upsert` with Found by = "Me" and Fit % from 0 to 100 (section 6), and summarizes the run in the chat instead of the Finder Log (sections 7 and 8). See `AGENTS.md`, "Daily finder".
 
 Remove everything above the line; keep the rest.
 
