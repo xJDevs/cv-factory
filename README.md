@@ -84,9 +84,19 @@ Each rule traces back to research: how ATS parse and rank, what AI screeners do,
 - **Notion is read through database views, not SQL queries.** Notion limits SQL query usage on its plans, and the views give the same rows without that limit.
 - **Integrity check.** `engine/MANIFEST.sha256` fingerprints the core files. Setup warns if someone changed them, because users are encouraged to expand the project but not to modify the engine.
 
-## Try it
+## Use it for yourself (no commands needed)
 
-Requirements: macOS, Linux or Windows 10/11, with Python 3.10+, Node, poppler, LibreOffice and git. `engine/setup.py` installs the rest locally and tells you how to install anything missing.
+1. Read the [user guide](docs/user-guide.md) (10 minutes) and the [disclaimer](DISCLAIMER.md).
+2. Download this repository (green **Code** button → **Download ZIP**, or `git clone`), unzip it and put the folder on your Desktop as **`cv-factory`**.
+3. Open that folder in Claude Code (or another AI agent) and write: *"Hi, set me up."* Use the most capable model you have.
+
+That's it. The AI runs the onboarding (`setup/onboarding.md`): it checks your computer, tells you what to install if something is missing, and installs the rest itself, then builds your inventory, your Notion workspace (or Excel workbook) and, if you want, the daily finder. You never have to type the commands below.
+
+## Quick check for developers
+
+Optional: this only proves that the engine works on your machine. It installs the engine and runs the 9 tests on the fictional example CV, without any personal data.
+
+Requirements: macOS, Linux or Windows 10/11, with Python 3.10+, Node, poppler, LibreOffice and git. `engine/setup.py` installs the rest locally and says what is missing.
 
 | | macOS (Homebrew) | Linux (apt) | Windows (winget, PowerShell) |
 |---|---|---|---|
@@ -111,7 +121,8 @@ engine/.venv/bin/python engine/scripts/cv.py test \
   --out my-data/reads/example-check       # → APPROVED
 ```
 
-Windows (PowerShell; if your Desktop is in OneDrive, it is `$HOME\OneDrive\Desktop`):
+
+Windows (PowerShell). The commands find your real Desktop on their own, even when OneDrive backs it up (then it is `C:\Users\<you>\OneDrive\Desktop`):
 
 ```powershell
 git clone https://github.com/xJDevs/cv-factory.git "$([Environment]::GetFolderPath('Desktop'))\cv-factory"
@@ -122,8 +133,6 @@ Copy-Item engine\example\output\*.* my-data\reads\example-check\
 engine\.venv\Scripts\python.exe engine\scripts\cv.py test engine\example\cv-example.json `
   --snapshot engine\example\snapshot-example.json --out my-data\reads\example-check   # → APPROVED
 ```
-
-To use it for yourself, open the folder in Claude Code (or another agent) and say hello. It starts the onboarding (`setup/onboarding.md`). Read the [user guide](docs/user-guide.md) first, and use the most capable model you have.
 
 ## Project structure
 
