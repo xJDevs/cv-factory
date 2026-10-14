@@ -1,0 +1,70 @@
+{
+  "_about": "Template of my-data/profile.json. The onboarding (step 0) copies it to my-data/profile.json without the _about and _help keys, and fills it in. Private: my-data/ never goes to Git.",
+  "_help": {
+    "history_notes": "List of strings: true things that must not appear in CVs, each with the reason and the date it was decided. E.g. \"One-week customer service training at Example Co (2019): too short to show. Decided 2026-10-13.\" With Excel they live here; with Notion they live in the hub's History notes section (this list may stay empty).",
+    "preferences.target_areas": "Free text: the roles the person wants. It goes in the hub (Search preferences) and guides the finder.",
+    "preferences.search_languages": "Languages of the vacancies to search. This project searches and writes CVs in English: [\"en\"].",
+    "preferences.job_types": "Free text: the kind of work wanted or avoided, e.g. \"back office only, no call-center roles\".",
+    "tracks": "List of career areas, e.g. [\"Claims\", \"Operations\", \"Data\"]. They become the Track options of the Notion databases; with Excel they are only kept here.",
+    "onboarding.completed_steps": "Step numbers as strings, in order; a skipped step as \"N-skipped\". E.g. [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10-skipped\", \"11\"]."
+  },
+  "version": 1,
+  "project": "cv-factory",
+  "disclaimer_accepted": "",
+  "storage": "",
+  "person": {
+    "full_name": "",
+    "first_name": "",
+    "last_names": "",
+    "phone": "",
+    "email": "",
+    "linkedin": "",
+    "portfolio": "",
+    "city": "",
+    "country": "",
+    "region": "",
+    "timezone": "",
+    "never_show": ""
+  },
+  "preferences": {
+    "work_mode": "",
+    "where": "",
+    "commute_area": "",
+    "target_areas": "",
+    "search_languages": ["en"],
+    "job_types": "",
+    "salary_min": "",
+    "salary_ideal": "",
+    "currency": ""
+  },
+  "tracks": [],
+  "history_notes": [],
+  "finder": {
+    "enabled": false,
+    "max_per_run": 20,
+    "min_fit_percent": 75,
+    "alert_fit_percent": 85,
+    "run_time_morning": "",
+    "run_time_midday": "",
+    "cron": "",
+    "model": "",
+    "routine": ""
+  },
+  "notion": {
+    "hub_url": "",
+    "databases": {
+      "experience": {"database_url": "", "data_source": "", "default_view": ""},
+      "achievements": {"database_url": "", "data_source": "", "default_view": ""},
+      "skills": {"database_url": "", "data_source": "", "default_view": ""},
+      "target_roles": {"database_url": "", "data_source": "", "default_view": ""},
+      "applications": {"database_url": "", "data_source": "", "default_view": ""},
+      "learning_log": {"database_url": "", "data_source": "", "default_view": ""},
+      "research": {"database_url": "", "data_source": "", "default_view": ""},
+      "sources": {"database_url": "", "data_source": "", "default_view": ""},
+      "finder_log": {"database_url": "", "data_source": "", "default_view": ""}
+    },
+    "pages": {"cv_rules": "", "finder_rules": "", "linkedin": ""}
+  },
+  "excel": {"workbook": "my-data/career-workbook.xlsx", "finder_rules": "my-data/finder-rules.md", "linkedin_texts": "my-data/linkedin-texts.md"},
+  "onboarding": {"completed": false, "completed_steps": [], "pending_notes": ""}
+}

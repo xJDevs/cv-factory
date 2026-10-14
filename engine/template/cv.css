@@ -1,0 +1,59 @@
+/* Copyright 2026 Johel Gomez Rojas. Part of CV Factory. Licensed under the Apache License, Version 2.0 (see LICENSE and NOTICE at the project root). Do not remove this notice. */
+/* Rules: the CV rules doc and research doc 05, §5.7 */
+@font-face { font-family: "CV"; src: url("{{FONTS}}/Carlito-Regular.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "CV"; src: url("{{FONTS}}/Carlito-Bold.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "CV"; src: url("{{FONTS}}/Carlito-Italic.ttf"); font-weight: 400; font-style: italic; }
+
+@page { size: {{PAPER}}; margin: 0.7in; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* No ligatures, no hyphenation, no letter spacing */
+  font-variant-ligatures: none;
+  /* Exact glyph positions (no rounding from hinting) and no kerning. Without this,
+     Chromium does not write the spaces and, with Carlito, pdfium glues words together ("claimsspecialist"). */
+  text-rendering: geometricPrecision;
+  font-kerning: none;
+  font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "kern" 0;
+  hyphens: manual;
+  letter-spacing: 0;
+  word-spacing: normal;
+}
+
+body {
+  font-family: "CV", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.25;
+  color: #000;
+  text-align: left;
+}
+
+h1 { font-size: 16pt; font-weight: 700; }
+.headline { font-size: 11.5pt; margin-top: 1pt; }
+.contact { margin-top: 2pt; }
+
+h2 {
+  font-size: 11.5pt;
+  font-weight: 700;
+  margin-top: 10pt;
+  padding-bottom: 1pt;
+  border-bottom: 0.75pt solid #000;
+  margin-bottom: 4pt;
+  break-after: avoid;
+}
+
+p { orphans: 2; widows: 2; }
+.labeled { margin-bottom: 1.5pt; }
+.entry { margin-bottom: 6pt; }
+/* A job never starts at the top of a new page: some parsers (OpenResume) glue it
+   to the previous job. If the page break falls between two jobs, it moves inside the bullets. */
+.entry + .entry { break-before: avoid; }
+.line { break-after: avoid; margin-bottom: 1.5pt; }
+.bullet { padding-left: 12pt; text-indent: -9pt; margin-bottom: 1.5pt; }
+.mark { display: inline-block; width: 9pt; text-indent: 0; }
+/* A date range never splits across two lines: if it does not fit, it moves down whole */
+.dates { white-space: nowrap; }
+/* A hyphenated word never breaks at the end of a line (pdfium reads U+FFFE, pdf.js splits it) */
+.nobr { white-space: nowrap; }

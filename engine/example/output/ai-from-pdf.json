@@ -1,0 +1,22 @@
+{
+  "name": "Ana Maria Solis Vargas",
+  "headline": "Healthcare Claims Specialist",
+  "email": "ana.solis@example.com",
+  "phone": "+506 8888-0000",
+  "location": "Heredia, Costa Rica",
+  "linkedin": "linkedin.com/in/ana-solis-example",
+  "experience": [
+    {"title": "Claims Specialist", "company": "Example Services", "dates": "February 2023 – Present"},
+    {"title": "Customer Service Representative", "company": "Example Contact Center", "dates": "January 2021 – January 2023"}
+  ],
+  "education": [
+    {"degree": "Bachelor's Degree in Business Administration", "institution": "Universidad de Costa Rica", "dates": "December 2020"}
+  ],
+  "certifications": [
+    {"name": "Certified Revenue Cycle Representative (CRCR)", "issuer": "HFMA"}
+  ],
+  "languages": [
+    {"language": "Spanish", "level": "Native"},
+    {"language": "English", "level": "C1, Advanced"}
+  ]
+}

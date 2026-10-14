@@ -1,0 +1,116 @@
+{
+  "read_at": "fictional example",
+  "note": "Fictional person and data, only for testing the engine. Not a real resume.",
+  "completeness": {
+    "hub_read": true,
+    "databases": {
+      "experience": {
+        "rows_in_source": 4
+      },
+      "achievements": {
+        "rows_in_source": 6
+      },
+      "skills": {
+        "rows_in_source": 6
+      }
+    }
+  },
+  "rows": {
+    "E1": {
+      "database": "experience",
+      "text": "Claims Specialist, Example Services (2023 – present)",
+      "verified": null,
+      "content": "Billing account for US hospitals. Review of denied claims in Epic."
+    },
+    "E2": {
+      "database": "experience",
+      "text": "Customer Service Representative, Example Contact Center (2021 – 2023)",
+      "verified": null,
+      "content": "Billing customer service for US customers."
+    },
+    "E3": {
+      "database": "experience",
+      "text": "Bachelor's Degree in Business Administration, Universidad de Costa Rica",
+      "verified": null,
+      "content": "Graduated in December 2020."
+    },
+    "E4": {
+      "database": "experience",
+      "text": "CRCR, HFMA (2024)",
+      "verified": null,
+      "content": "Certification earned in May 2024."
+    },
+    "A1": {
+      "database": "achievements",
+      "text": "I review 60+ denied claims per day with a 98% QA score",
+      "verified": true,
+      "content": ""
+    },
+    "A2": {
+      "database": "achievements",
+      "text": "Excel trackers for denial reasons: 15% less rework",
+      "verified": true,
+      "content": ""
+    },
+    "A3": {
+      "database": "achievements",
+      "text": "I explain deductibles, out-of-pocket costs and premiums to patients in English and Spanish",
+      "verified": true,
+      "content": ""
+    },
+    "A4": {
+      "database": "achievements",
+      "text": "Billing support in Salesforce by phone, chat and email",
+      "verified": true,
+      "content": ""
+    },
+    "A5": {
+      "database": "achievements",
+      "text": "Trained 12 new hires",
+      "verified": true,
+      "content": ""
+    },
+    "S1": {
+      "database": "skills",
+      "text": "Claims review / denials",
+      "verified": null,
+      "content": ""
+    },
+    "S2": {
+      "database": "skills",
+      "text": "EOB / patient balances",
+      "verified": null,
+      "content": ""
+    },
+    "S3": {
+      "database": "skills",
+      "text": "Epic",
+      "verified": null,
+      "content": ""
+    },
+    "S4": {
+      "database": "skills",
+      "text": "Salesforce / Excel",
+      "verified": null,
+      "content": ""
+    },
+    "S5": {
+      "database": "skills",
+      "text": "Spanish",
+      "verified": null,
+      "content": ""
+    },
+    "S6": {
+      "database": "skills",
+      "text": "English C1",
+      "verified": null,
+      "content": ""
+    },
+    "A6": {
+      "database": "achievements",
+      "text": "Supported prior authorizations (not confirmed)",
+      "content": "",
+      "verified": false
+    }
+  }
+}

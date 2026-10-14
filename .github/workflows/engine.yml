@@ -1,0 +1,86 @@
+# Copyright 2026 Johel Gomez Rojas. Part of CV Factory. Licensed under the Apache License, Version 2.0 (see LICENSE and NOTICE at the project root). Do not remove this notice.
+# Runs the engine's setup and the honest example check (a copy of engine/example/output, English)
+# on Linux, macOS and Windows.
+name: engine
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  example-check:
+    name: Example check (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: System programs (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils libreoffice-writer fonts-crosextra-carlito
+          # Libraries Chromium needs; setup.py downloads Chromium itself.
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install-deps chromium
+
+      - name: System programs (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install poppler
+          brew install --cask libreoffice
+
+      - name: System programs (Windows)
+        if: runner.os == 'Windows'
+        # winget is not available on the hosted runners; Chocolatey is. LibreOffice is not added
+        # to PATH: the engine finds it in C:\Program Files\LibreOffice\program by itself.
+        shell: pwsh
+        run: |
+          choco install -y --no-progress libreoffice-fresh
+          # Poppler from the poppler-windows release zip (the build winget installs).
+          $zip = "$env:RUNNER_TEMP\poppler.zip"
+          Invoke-WebRequest https://github.com/oschwartz10612/poppler-windows/releases/download/v26.09.0-0/Release-26.09.0-0.zip -OutFile $zip
+          Expand-Archive $zip -DestinationPath "$env:RUNNER_TEMP\poppler"
+          $bin = (Get-ChildItem "$env:RUNNER_TEMP\poppler" -Recurse -Filter pdftotext.exe | Select-Object -First 1).DirectoryName
+          "CVF_POPPLER_BIN=$bin" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          & "$bin\pdftotext.exe" -v
+
+      - name: Setup (must end with READY)
+        run: python engine/setup.py
+
+      - name: Integrity (no false alarms)
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then PY=engine/.venv/Scripts/python.exe; else PY=engine/.venv/bin/python; fi
+          "$PY" engine/scripts/integrity.py --check | tee integrity.txt
+          grep -q "all core files match" integrity.txt
+
+      - name: Example check, English (must be APPROVED)
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then PY=engine/.venv/Scripts/python.exe; else PY=engine/.venv/bin/python; fi
+          out=ci-example-check/en   # a copy inside the checkout: engine/example/output is never written
+          mkdir -p "$out"
+          cp engine/example/output/*.* "$out"/
+          "$PY" engine/scripts/cv.py test engine/example/cv-example.json \
+            --snapshot engine/example/snapshot-example.json --out "$out"
+
+      - name: Test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-${{ matrix.os }}
+          path: ci-example-check/en/
+          if-no-files-found: ignore

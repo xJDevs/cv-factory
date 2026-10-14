@@ -1,0 +1,33 @@
+{# Copyright 2026 Johel Gomez Rojas. Part of CV Factory. Licensed under the Apache License, Version 2.0 (see LICENSE and NOTICE at the project root). Do not remove this notice. -#}
+<!doctype html>
+<html lang="{{ v.language }}">
+<head>
+<meta charset="utf-8">
+<title>{{ v.pdf_title }}</title>
+<style>
+{{ css | safe }}
+</style>
+</head>
+<body>
+<main>
+<h1>{{ v.name }}</h1>
+<p class="headline">{{ v.headline }}</p>
+<p class="contact">{% for c in v.contact %}{% if not loop.first %} | {% endif %}{{ c }}{% endfor %}</p>
+{% for s in v.sections %}
+<section>
+<h2>{{ s.title }}</h2>
+{% if s.paragraph %}<p>{{ s.paragraph | nobr }}</p>{% endif %}
+{% for l in s.labeled or [] %}<p class="labeled"><strong>{{ l.label }}</strong> {{ l.text | nobr }}</p>
+{% endfor %}
+{% for e in s.entries or [] %}
+<div class="entry">
+<p class="line"><strong>{{ e.bold }}</strong>{{ e.rest }}{% if e.dates %} | <span class="dates">{{ e.dates }}</span>{% endif %}</p>
+{% for b in e.bullets %}<p class="bullet"><span class="mark">&#8226;</span> {{ b | nobr }}</p>
+{% endfor %}
+</div>
+{% endfor %}
+</section>
+{% endfor %}
+</main>
+</body>
+</html>

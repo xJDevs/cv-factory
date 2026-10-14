@@ -1,0 +1,17 @@
+CV Factory
+Copyright 2026 Johel Gomez Rojas
+
+This product was designed and built by Johel Gomez Rojas.
+
+Licensed under the Apache License, Version 2.0 (see LICENSE). Under section 4
+of that license, anyone who redistributes this work or a work derived from it
+must keep this NOTICE file, keep the copyright and attribution notices at the
+top of each source file, and state in any file they modify that they changed
+it. Credit for the original work belongs to Johel Gomez Rojas.
+
+Third-party components:
+- Carlito font (engine/fonts/), SIL Open Font License 1.1 (engine/fonts/OFL.txt).
+- OpenResume (https://github.com/xitanggg/open-resume), AGPL-3.0. It is NOT
+  included in this project: test 5 downloads it at runtime to the user's cache.
+- Python and Node packages installed by engine/setup.py, each under its own
+  license.

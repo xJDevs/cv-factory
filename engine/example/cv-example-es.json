@@ -1,0 +1,58 @@
+{
+  "language": "es",
+  "paper": "letter",
+  "job": {"company": "Example Health", "title": "Especialista en Reclamos Médicos", "link": ""},
+  "contact": {
+    "name": "Ana María Solís Vargas",
+    "headline": "Especialista en Reclamos Médicos",
+    "location": "Heredia, Costa Rica",
+    "phone": "+506 8888-0000",
+    "email": "ana.solis@example.com",
+    "linkedin": "linkedin.com/in/ana-solis-example"
+  },
+  "summary": {
+    "text": "Especialista en reclamos médicos con 5 años de experiencia apoyando a sistemas hospitalarios y clientes de EE. UU. Revisó más de 60 reclamos denegados por día con una calidad del 98 % y redujo el retrabajo con controles en Excel. Bilingüe (español e inglés), con experiencia en Epic y Salesforce.",
+    "sources": ["E1", "E2", "A1", "A2", "A3", "A4"]
+  },
+  "skills": [
+    {"category": "Ciclo de ingresos", "items": ["Revisión de reclamos", "Gestión de denegaciones", "Explicación de beneficios (EOB)", "Saldos de pacientes"], "sources": ["S1", "S2"]},
+    {"category": "Sistemas", "items": ["Epic", "Salesforce", "Microsoft Excel (BUSCARV, tablas dinámicas)"], "sources": ["S3", "S4"]}
+  ],
+  "experience": [
+    {
+      "title": "Especialista en Reclamos",
+      "company": "Example Services",
+      "location": "Heredia, Costa Rica",
+      "start": "2023-02",
+      "end": "present",
+      "sources": ["E1"],
+      "bullets": [
+        {"text": "Reviso más de 60 reclamos denegados por día para hospitales de EE. UU. en Epic, con una calidad del 98 %.", "sources": ["A1"]},
+        {"text": "Creé controles en Excel de los motivos de denegación que redujeron el retrabajo en 15 % en seis meses.", "sources": ["A2"]},
+        {"text": "Explico deducibles, gastos de bolsillo y primas a pacientes en inglés y español.", "sources": ["A3"]}
+      ]
+    },
+    {
+      "title": "Representante de Servicio al Cliente",
+      "company": "Example Contact Center",
+      "location": "San José, Costa Rica",
+      "start": "2021-01",
+      "end": "2023-01",
+      "sources": ["E2"],
+      "bullets": [
+        {"text": "Resolví consultas de facturación y cuentas de clientes de EE. UU. por teléfono, chat y correo en Salesforce.", "sources": ["A4"]},
+        {"text": "Capacité a 12 personas de nuevo ingreso en la base de conocimiento y los estándares de calidad.", "sources": ["A5"]}
+      ]
+    }
+  ],
+  "education": [
+    {"degree": "Bachillerato en Administración de Empresas", "institution": "Universidad de Costa Rica", "location": "San José, Costa Rica", "end": "2020-12", "sources": ["E3"]}
+  ],
+  "certifications": [
+    {"name": "Certified Revenue Cycle Representative (CRCR)", "issuer": "HFMA", "start": "2024-05", "sources": ["E4"]}
+  ],
+  "languages": [
+    {"language": "Español", "level": "Nativo", "sources": ["S5"]},
+    {"language": "Inglés", "level": "C1, avanzado", "sources": ["S6"]}
+  ]
+}

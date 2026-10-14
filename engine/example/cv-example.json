@@ -1,0 +1,58 @@
+{
+  "language": "en",
+  "paper": "letter",
+  "job": {"company": "Example Health", "title": "Claims Specialist", "link": ""},
+  "contact": {
+    "name": "Ana María Solís Vargas",
+    "headline": "Healthcare Claims Specialist",
+    "location": "Heredia, Costa Rica",
+    "phone": "+506 8888-0000",
+    "email": "ana.solis@example.com",
+    "linkedin": "linkedin.com/in/ana-solis-example"
+  },
+  "summary": {
+    "text": "Healthcare claims specialist with 5 years of experience serving US hospital systems and customers. Reviewed 60+ denied claims per day with a 98% quality score and reduced rework by building efficient office workflows in Excel. Bilingual (Spanish and English) and experienced with Epic and Salesforce.",
+    "sources": ["E1", "E2", "A1", "A2", "A3", "A4"]
+  },
+  "skills": [
+    {"category": "Revenue Cycle", "items": ["Claims review", "Denials management", "Explanation of Benefits (EOB)", "Patient balances"], "sources": ["S1", "S2"]},
+    {"category": "Systems", "items": ["Epic", "Salesforce", "Microsoft Excel (VLOOKUP, pivot tables)"], "sources": ["S3", "S4"]}
+  ],
+  "experience": [
+    {
+      "title": "Claims Specialist",
+      "company": "Example Services",
+      "location": "Heredia, Costa Rica",
+      "start": "2023-02",
+      "end": "present",
+      "sources": ["E1"],
+      "bullets": [
+        {"text": "Review 60+ denied claims per day for US hospital systems in Epic, with a 98% quality score.", "sources": ["A1"]},
+        {"text": "Built Excel trackers for denial reasons that cut rework by 15% in six months.", "sources": ["A2"]},
+        {"text": "Explain deductibles, out-of-pocket costs and premiums to patients in English and Spanish.", "sources": ["A3"]}
+      ]
+    },
+    {
+      "title": "Customer Service Representative",
+      "company": "Example Contact Center",
+      "location": "San José, Costa Rica",
+      "start": "2021-01",
+      "end": "2023-01",
+      "sources": ["E2"],
+      "bullets": [
+        {"text": "Resolved billing and account questions for US customers by phone, chat and email in Salesforce.", "sources": ["A4"]},
+        {"text": "Trained 12 new hires on the knowledge base and quality standards.", "sources": ["A5"]}
+      ]
+    }
+  ],
+  "education": [
+    {"degree": "Bachelor's Degree in Business Administration", "institution": "Universidad de Costa Rica", "location": "San José, Costa Rica", "end": "2020-12", "sources": ["E3"]}
+  ],
+  "certifications": [
+    {"name": "Certified Revenue Cycle Representative (CRCR)", "issuer": "HFMA", "start": "2024-05", "sources": ["E4"]}
+  ],
+  "languages": [
+    {"language": "Spanish", "level": "Native", "sources": ["S5"]},
+    {"language": "English", "level": "C1, Advanced", "sources": ["S6"]}
+  ]
+}

@@ -1,0 +1,16 @@
+# The person's private data — never committed
+my-data/
+CVs/
+
+# Local environments created by engine/setup.py
+engine/.venv/
+engine/.node/
+
+# Generated files
+__pycache__/
+*.pyc
+*.html
+!engine/template/*.html*
+# Research experiment fixtures (kept on purpose)
+!docs/research/experiments/html/*.html
+.DS_Store

@@ -1,0 +1,9 @@
+# Same line endings on every system (LF), so the engine's integrity check never gives false alarms.
+* text=auto eol=lf
+
+# Binary files: never touch their bytes.
+*.ttf binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.png binary

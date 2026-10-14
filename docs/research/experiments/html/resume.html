@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Jane Doe - Resume</title>
+<meta name="author" content="Jane Doe">
+<style>
+@page { size: Letter; margin: 0.6in; }
+body { font-family: "Carlito", sans-serif; font-size: 10.5pt; }
+h1 { font-size: 20pt; margin: 0; }
+h2 { font-size: 12pt; text-transform: uppercase; border-bottom: 1px solid #000; margin: 12px 0 4px; }
+.spaced { letter-spacing: 0.4em; }
+.row { display: flex; justify-content: space-between; }
+.grid { display: grid; grid-template-columns: 30% 70%; gap: 12px; }
+ul.custom { list-style: none; padding-left: 1em; }
+ul.custom li::before { content: "\25AA  "; }
+</style></head>
+<body>
+<h1>Jane Doe</h1>
+<p>jane.doe@example.com | +1 (555) 010-2030 | linkedin.com/in/janedoe | <span>&#x1F4E7;</span> emoji-mail | <svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="4"/></svg> svg-icon</p>
+<h2>Experience</h2>
+<div class="row"><span><b>Senior Software Engineer</b>, Acme Financial Inc.</span><span>Jan 2020 &ndash; Present</span></div>
+<ul>
+<li>Efficient office workflow; financial fluency; affiliated offices; staff offload.</li>
+<li>Smart &ldquo;quotes&rdquo; and &rsquo;apostrophe&rsquo;; 2019&ndash;2023 &mdash; done; San&nbsp;Jos&eacute;; Java&#x200B;Script; Kuber&shy;netes; &#x2605; &#x2713; &#x27A4; end.</li>
+</ul>
+<ul class="custom"><li>Custom square bullet via CSS before</li></ul>
+<h2 class="spaced">Skills</h2>
+<div class="grid"><div><b>LANGUAGES</b><br>Python<br>SQL</div><div><b>PROJECTS</b><br>Streaming pipeline processing two billion events per day.</div></div>
+</body></html>

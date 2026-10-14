@@ -1,0 +1,54 @@
+{
+  "en": {
+    "summary": "PROFESSIONAL SUMMARY",
+    "skills": "SKILLS",
+    "experience": "PROFESSIONAL EXPERIENCE",
+    "projects": "PROJECTS",
+    "education": "EDUCATION",
+    "certifications": "CERTIFICATIONS",
+    "languages": "LANGUAGES",
+    "present": "Present",
+    "in_progress": "In progress",
+    "resume": "Resume",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  "es": {
+    "summary": "PERFIL PROFESIONAL",
+    "skills": "HABILIDADES",
+    "experience": "EXPERIENCIA PROFESIONAL",
+    "projects": "PROYECTOS",
+    "education": "EDUCACIÓN",
+    "certifications": "CERTIFICACIONES",
+    "languages": "IDIOMAS",
+    "present": "Actualidad",
+    "in_progress": "En curso",
+    "resume": "CV",
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ]
+  }
+}

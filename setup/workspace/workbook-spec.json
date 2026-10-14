@@ -1,0 +1,528 @@
+{
+ "language": "en",
+ "checkbox_labels": [
+  "Yes",
+  "No"
+ ],
+ "readme": {
+  "sheet": "README",
+  "title": "Career workbook",
+  "lines": [
+   "This workbook holds your career data: jobs, studies, achievements and skills,",
+   "plus the roles you aim for, the jobs you apply to and the sources the AI uses when you ask it to search.",
+   "The AI reads it to write each CV, and keeps it up to date with you.",
+   "You can also edit it yourself at any time.",
+   "",
+   "## How it works",
+   "Each sheet is a table, and each row is one thing: a job, a degree, an achievement, a skill.",
+   "Every row needs an ID in the first column, and no two rows can share one:",
+   "    E1, E2, ... in Experience & Education       A1, A2, ... in Achievements & Responsibilities",
+   "    S1, S2, ... in Skills                       R1, R2, ... in Target Roles",
+   "    J1, J2, ... in Application Tracker          F1, F2, ... in Finder Sources",
+   "Never change or reuse an ID: each line of a CV points to the row it comes from by its ID.",
+   "",
+   "## IDs link the sheets",
+   "Where (in Achievements) holds the ID of the job or study it belongs to, for example E2.",
+   "Evidence (in Skills) holds the IDs of the achievements that show the skill, for example A1, A4.",
+   "Key skills (in Target Roles) holds skill IDs, for example S1, S3.",
+   "",
+   "## Only verified achievements reach a CV",
+   "An achievement can appear in a CV only when Verified = Yes.",
+   "Mark it only when the wording is true and you can back it up in an interview.",
+   "Nothing in a CV is invented: if it is not in this workbook, it is not in the CV.",
+   "",
+   "## Please do not",
+   "Rename, delete or reorder the sheets, or change the column titles: the AI finds them by name.",
+   "Put two things in one row, or leave a row without an ID.",
+   "",
+   "## Tips",
+   "Dates look like 2023-02-01. For something current, leave End empty and set Current = Yes.",
+   "Columns with an arrow have a list of options. Point at a column title to see what goes there.",
+   "Use the filter buttons on the first row to sort or find rows."
+  ]
+ },
+ "messages": {
+  "id": "The ID must start with {prefix} and be unique in this sheet ({prefix}1, {prefix}2, ...).",
+  "select": "Pick one of the options in the list.",
+  "date": "Type a date, for example 2023-02-01.",
+  "number": "Type a number."
+ },
+ "tables": [
+  {
+   "key": "experience",
+   "sheet": "Experience & Education",
+   "id_prefix": "E",
+   "content_column": "Summary",
+   "text_fields": [
+    "Name",
+    "English title",
+    "Organization",
+    "Start",
+    "End",
+    "Summary"
+   ],
+   "verified_field": null,
+   "columns": [
+    {
+     "name": "ID",
+     "type": "id",
+     "note": "Unique ID of the row: E1, E2, ... Never reuse or change it."
+    },
+    {
+     "name": "Name",
+     "type": "text",
+     "note": "Job title, degree, certification or project, exactly as officially held.",
+     "width": 36
+    },
+    {
+     "name": "Type",
+     "type": "select",
+     "options": [
+      "Job",
+      "Freelance/Own business",
+      "Own project",
+      "Education",
+      "Certification",
+      "Course",
+      "Volunteering"
+     ]
+    },
+    {
+     "name": "Organization",
+     "type": "text",
+     "note": "Company, school or issuer, with its official name."
+    },
+    {
+     "name": "English title",
+     "type": "text",
+     "note": "The same title in English, if it has an official or common one.",
+     "width": 30
+    },
+    {
+     "name": "Start",
+     "type": "date"
+    },
+    {
+     "name": "End",
+     "type": "date",
+     "note": "Leave it empty if it is current."
+    },
+    {
+     "name": "Current",
+     "type": "checkbox",
+     "note": "Yes if you are still doing it."
+    },
+    {
+     "name": "Location / work mode",
+     "type": "text",
+     "note": "City and country, and on-site, hybrid or remote."
+    },
+    {
+     "name": "Industry",
+     "type": "text",
+     "width": 20
+    },
+    {
+     "name": "Summary",
+     "type": "long_text",
+     "note": "What you did there, in your own words. The AI reads it as the page of this row.",
+     "width": 60
+    },
+    {
+     "name": "Link / credential",
+     "type": "text",
+     "note": "Credential ID or verification link, if any."
+    }
+   ]
+  },
+  {
+   "key": "achievements",
+   "sheet": "Achievements & Responsibilities",
+   "id_prefix": "A",
+   "content_column": "Notes",
+   "text_fields": [
+    "Description",
+    "English version",
+    "Metric / result"
+   ],
+   "verified_field": "Verified",
+   "columns": [
+    {
+     "name": "ID",
+     "type": "id",
+     "note": "Unique ID of the row: A1, A2, ... Never reuse or change it."
+    },
+    {
+     "name": "Description",
+     "type": "long_text",
+     "note": "One line: what you did or achieved.",
+     "width": 55
+    },
+    {
+     "name": "Type",
+     "type": "select",
+     "options": [
+      "Achievement",
+      "Responsibility",
+      "Project",
+      "Recognition"
+     ]
+    },
+    {
+     "name": "Where (experience ID)",
+     "type": "text",
+     "note": "The ID of the job or study in Experience & Education, for example E2.",
+     "width": 16
+    },
+    {
+     "name": "Skills shown (skill IDs, comma-separated)",
+     "type": "text",
+     "note": "Skill IDs from the Skills sheet, for example S1, S4.",
+     "width": 22
+    },
+    {
+     "name": "Metric / result",
+     "type": "text",
+     "note": "The number or result, if there is one: 15% less rework, 60 claims a day."
+    },
+    {
+     "name": "Context (STAR)",
+     "type": "long_text",
+     "note": "Situation, task, action and result, for interviews.",
+     "width": 45
+    },
+    {
+     "name": "English version",
+     "type": "long_text",
+     "width": 45
+    },
+    {
+     "name": "Verified",
+     "type": "checkbox",
+     "note": "Yes only when the wording is true and you can back it up. Only verified achievements can appear in a CV."
+    },
+    {
+     "name": "Notes",
+     "type": "long_text",
+     "width": 40
+    }
+   ]
+  },
+  {
+   "key": "skills",
+   "sheet": "Skills",
+   "id_prefix": "S",
+   "content_column": "Notes",
+   "text_fields": [
+    "Skill",
+    "Level",
+    "Notes"
+   ],
+   "verified_field": null,
+   "columns": [
+    {
+     "name": "ID",
+     "type": "id",
+     "note": "Unique ID of the row: S1, S2, ... Never reuse or change it."
+    },
+    {
+     "name": "Skill",
+     "type": "text"
+    },
+    {
+     "name": "Category",
+     "type": "select",
+     "options": [
+      "Technical",
+      "Tool/Software",
+      "Domain/Industry",
+      "Soft",
+      "Language",
+      "Certifiable"
+     ]
+    },
+    {
+     "name": "Level",
+     "type": "select",
+     "options": [
+      "Basic",
+      "Intermediate",
+      "Advanced",
+      "Expert",
+      "Native"
+     ]
+    },
+    {
+     "name": "Years of use",
+     "type": "number"
+    },
+    {
+     "name": "Last used",
+     "type": "date"
+    },
+    {
+     "name": "Evidence (achievement IDs)",
+     "type": "text",
+     "note": "Achievement IDs that show this skill, for example A1, A4.",
+     "width": 20
+    },
+    {
+     "name": "Synonyms / how job posts ask for it",
+     "type": "text",
+     "width": 34
+    },
+    {
+     "name": "Notes",
+     "type": "long_text",
+     "width": 40
+    }
+   ]
+  },
+  {
+   "key": "target_roles",
+   "sheet": "Target Roles",
+   "id_prefix": "R",
+   "content_column": null,
+   "columns": [
+    {
+     "name": "ID",
+     "type": "id",
+     "note": "Unique ID of the row: R1, R2, ... Never reuse or change it."
+    },
+    {
+     "name": "Role",
+     "type": "text"
+    },
+    {
+     "name": "Fit %",
+     "type": "number",
+     "note": "From 0 to 100."
+    },
+    {
+     "name": "Priority",
+     "type": "select",
+     "options": [
+      "High",
+      "Medium",
+      "Low",
+      "Discarded"
+     ]
+    },
+    {
+     "name": "Market",
+     "type": "text",
+     "width": 20
+    },
+    {
+     "name": "Equivalent titles",
+     "type": "long_text",
+     "width": 36
+    },
+    {
+     "name": "Why it fits",
+     "type": "long_text",
+     "width": 40
+    },
+    {
+     "name": "Gaps",
+     "type": "long_text",
+     "width": 36
+    },
+    {
+     "name": "How to close the gap",
+     "type": "long_text",
+     "width": 36
+    },
+    {
+     "name": "Reference salary range",
+     "type": "text",
+     "width": 24
+    },
+    {
+     "name": "Key skills (IDs)",
+     "type": "text",
+     "note": "Skill IDs, for example S1, S3.",
+     "width": 18
+    }
+   ]
+  },
+  {
+   "key": "applications",
+   "sheet": "Application Tracker",
+   "id_prefix": "J",
+   "content_column": null,
+   "columns": [
+    {
+     "name": "ID",
+     "type": "id",
+     "note": "Unique ID of the row: J1, J2, ... Never reuse or change it."
+    },
+    {
+     "name": "Job (Role — Company)",
+     "type": "text",
+     "width": 36
+    },
+    {
+     "name": "Status",
+     "type": "select",
+     "options": [
+      "To review",
+      "Will apply",
+      "CV ready",
+      "Applied",
+      "Interview",
+      "Offer",
+      "Rejected",
+      "Discarded"
+     ]
+    },
+    {
+     "name": "Company",
+     "type": "text",
+     "width": 22
+    },
+    {
+     "name": "Link",
+     "type": "text"
+    },
+    {
+     "name": "Source",
+     "type": "text",
+     "width": 18
+    },
+    {
+     "name": "Found by",
+     "type": "select",
+     "options": [
+      "Daily finder",
+      "Me"
+     ]
+    },
+    {
+     "name": "Work mode",
+     "type": "select",
+     "options": [
+      "On-site (local)",
+      "Hybrid (local)",
+      "Remote (country/region)",
+      "Remote (international)"
+     ]
+    },
+    {
+     "name": "Work type",
+     "type": "select",
+     "options": [
+      "Back office",
+      "Calls",
+      "Mixed",
+      "Unconfirmed"
+     ]
+    },
+    {
+     "name": "Fit %",
+     "type": "number",
+     "note": "From 0 to 100."
+    },
+    {
+     "name": "Target role (ID)",
+     "type": "text",
+     "note": "The ID from Target Roles, for example R1.",
+     "width": 16
+    },
+    {
+     "name": "Gaps vs job post",
+     "type": "long_text",
+     "width": 36
+    },
+    {
+     "name": "Eligible from my country",
+     "type": "text",
+     "width": 18
+    },
+    {
+     "name": "Knockout questions",
+     "type": "long_text",
+     "width": 34
+    },
+    {
+     "name": "Salary",
+     "type": "text",
+     "width": 16
+    },
+    {
+     "name": "Contact / referral",
+     "type": "text",
+     "width": 22
+    },
+    {
+     "name": "Notes",
+     "type": "long_text",
+     "width": 40
+    },
+    {
+     "name": "Date found",
+     "type": "date"
+    },
+    {
+     "name": "Date posted",
+     "type": "date"
+    },
+    {
+     "name": "Date applied",
+     "type": "date"
+    },
+    {
+     "name": "Next follow-up",
+     "type": "date"
+    }
+   ]
+  },
+  {
+   "key": "finder_sources",
+   "sheet": "Finder Sources",
+   "id_prefix": "F",
+   "content_column": null,
+   "columns": [
+    {
+     "name": "ID",
+     "type": "id",
+     "note": "Unique ID of the row: F1, F2, ... Never reuse or change it."
+    },
+    {
+     "name": "Source",
+     "type": "text"
+    },
+    {
+     "name": "Type",
+     "type": "select",
+     "options": [
+      "Company ATS API",
+      "Remote board",
+      "Web search",
+      "Company career site",
+      "Local job board"
+     ]
+    },
+    {
+     "name": "Active",
+     "type": "checkbox"
+    },
+    {
+     "name": "URL or query",
+     "type": "text",
+     "width": 40
+    },
+    {
+     "name": "Why",
+     "type": "long_text",
+     "width": 36
+    },
+    {
+     "name": "Notes",
+     "type": "long_text",
+     "width": 36
+    }
+   ]
+  }
+ ]
+}

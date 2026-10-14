@@ -1,0 +1,5 @@
+{
+  "experience": {"text_fields": ["Name", "English title", "Organization", "date:Period:start", "date:Period:end", "Summary"], "verified_field": null},
+  "achievements": {"text_fields": ["Description", "English version", "Metric / result"], "verified_field": "Verified"},
+  "skills": {"text_fields": ["Skill", "Level", "Notes"], "verified_field": null}
+}

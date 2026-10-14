@@ -1,0 +1,10 @@
+import { chromium } from '/home/claude/.npm-global/lib/node_modules/playwright/index.mjs';
+const [,, inp, out, tagged] = process.argv;
+const b = await chromium.launch();
+const p = await b.newPage();
+await p.goto('file://' + inp);
+const opts = { path: out, format: 'Letter', printBackground: true };
+if (tagged === 'tagged') opts.tagged = true;
+if (tagged === 'untagged') opts.tagged = false;
+await p.pdf(opts);
+await b.close();
